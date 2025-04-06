@@ -1,0 +1,25 @@
+services:
+  app:
+    container_name: app
+    build:
+      context: ./app
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3001:3001"
+    networks:
+      - dev-network
+    volumes:
+      - type: bind
+        source: ./app/src
+        target: /app
+    tty: true
+    environment:
+      - DEBUG=app:*
+
+volumes:
+  db-volume:
+  phpmyadmin-volume:
+
+networks:
+  dev-network:
+    driver: bridge

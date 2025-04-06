@@ -11,14 +11,14 @@ import ContextNodeMenu from "./ContextNodeMenu";
 import GraphRunner from "./GraphRunner";
 import TemplateGraph from "./TemplateGraph";
 
-// import { EdgeData, NodePosition, UpdateStaticValue } from "../utils/gui/type";
+// import { EdgeData, NodePosition, UpdateStaticValue } from "src/utils/gui/type";
 
-import { graphChat } from "../graph/chat_tinyswallow";
+import { graphChat } from "src/graph/chat_tinyswallow";
 
-import { useNewEdge } from "../composable/gui";
-import { graphToGUIData, guiEdgeData2edgeData, handleDownload } from "../utils/gui/utils";
+import { useNewEdge } from "src/composable/gui";
+import { graphToGUIData, guiEdgeData2edgeData, handleDownload } from "src/utils/gui/utils";
 import { GraphData, sleep } from "graphai";
-import { useLocalStore, node2Record, toGraph } from "../store/index";
+import { useLocalStore, node2Record, toGraph } from "src/store/index";
 
 const GUI: FC = () => {
   const nodes = useLocalStore((state) => state.nodes());

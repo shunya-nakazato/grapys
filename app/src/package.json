@@ -1,14 +1,32 @@
 {
-  "name": "grapys",
-  "version": "0.0.1",
-  "description": "Monorepo for the grapys",
-  "scripts": {
-    "test": "tsx --test ./tests/test_*.ts",
-    "build": "yarn workspaces run build",
-    "lint": "yarn workspaces run lint",
-    "format": "yarn workspaces run format"
-  },
+  "name": "grapys-react",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "format": "prettier --write '{src/**/*,*}.{js,ts,tsx}'"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.3.0",
+    "vite": "^4.5.0",
+    "zustand": "^5.0.3",
+    "@graphai/agent_filters": "^1.0.0",
+    "@graphai/anthropic_agent": "^1.0.1",
+    "@graphai/browserless_agent": "^0.0.3",
+    "@graphai/data_agents": "^1.0.0",
+    "@graphai/gemini_agent": "^1.0.1",
+    "@graphai/openai_agent": "^1.0.2",
+    "@graphai/vanilla": "^1.0.9",
+    "@mlc-ai/web-llm": "^0.2.78",
+    "@receptron/event_agent_generator": "^0.0.6",
+    "graphai": "^1.0.2"
+  },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
     "@tailwindcss/postcss": "^4.0.14",
@@ -33,24 +51,7 @@
     "tsx": "^4.19.3",
     "typescript": "~5.8.2",
     "typescript-eslint": "^8.26.1",
-    "vite": "^6.2.2",
+    "vite": "^4.5.0",
     "vue-eslint-parser": "^10.1.1"
-  },
-  "workspaces": [
-    "packages/*"
-  ],
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "@graphai/agent_filters": "^1.0.0",
-    "@graphai/anthropic_agent": "^1.0.1",
-    "@graphai/browserless_agent": "^0.0.3",
-    "@graphai/data_agents": "^1.0.0",
-    "@graphai/gemini_agent": "^1.0.1",
-    "@graphai/openai_agent": "^1.0.2",
-    "@graphai/vanilla": "^1.0.9",
-    "@mlc-ai/web-llm": "^0.2.78",
-    "@receptron/event_agent_generator": "^0.0.6",
-    "graphai": "^1.0.2"
   }
 }
